@@ -44,7 +44,9 @@
               <% end %>
               
               <% if logged_in? && current_user.admin? %>
+                <% if Category.all.any? %>
                 <li role="separator" class="divider"></li>
+                <% end %>
                 <li><%= link_to "Create a new category", new_category_path %></li>
               <% end %>
             </ul>
